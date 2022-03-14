@@ -1,24 +1,76 @@
-body{    
-  background-image: linear-gradient(to bottom, #505ff8, #516ff8, #577ef7, #628bf3, #7098ef, #68a6f4, #65b3f7, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1) no-repeat;
-}
-/* .infoWrapper{
+#inputCity,#submit{
   display: flex;
-  border: 1px solid black;
-  margin: 10px;
-  flex-direction: column;
+  border: none;
+  margin: 0 auto;
+  flex-direction: row;
   flex-wrap: wrap;
-  align-content: center;
-  font-size: 22px;
+  align-content: center;  
+  font-size: 42px;
+  border-radius: 25px;
+  font-weight: bolder;
+  color: 1c1e21;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-} */
-/* .appWrapper{
-  border: 2px solid black;
-  display: block;
-  margin: '0px auto';
-  margin: 10px;
+  text-align: center;
+}
+
+#submit{
+  padding: 20px;
+  margin: 0 20px;
+  pointer-events: all;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.inputWrapper{
+  display: flex;
+  margin: 10px auto;
+  padding: 20px;
+  width: fit-content;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;  
+  font-size: 52px;
+  color: 1c1e21;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.infoWrapper{
+  display: none;
+  border: 5px solid black;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  margin: 10px auto;
+  padding: 20px;
+  width: fit-content;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-} */
+  align-content: center;  
+  font-size: 52px;
+  color: 1c1e21;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+  background-color: #ffffff;
+}
+
+.appWrapper {
+  border: 20px solid #1c1e21;
+  border-radius: 20px;
+  background-color: white !important;
+  float: right !important;
+  position: absolute;
+  margin: 10px auto;
+  left: 0;
+  right: 0;
+  width: 90% !important;
+  height: 85% !important;
+  overflow-x: hidden !important;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center; 
+  background-image: linear-gradient(to bottom, #505ff8, 
+  #516ff8, #577ef7, #628bf3, #7098ef, #68a6f4, #65b3f7,
+   #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}

@@ -2,10 +2,15 @@ window.onload = StartApp
 
 function StartApp() {
   let inputCity = document.getElementById('inputCity')
+  let submitButton = document.getElementById('submit')
   inputCity.addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
       GetResults(event.target.value)
     }
+  })
+
+  submitButton.addEventListener('click', () => {
+    GetResults(inputCity.value)
   })
 }
 
@@ -17,13 +22,18 @@ const api = {
 function GetResults(cityName) {
   fetch(`${api.url}${cityName}&appid=${api.key}&units=metric`)
     .then((response) => {
-      return response.json()
+      if (response.ok) {
+        return response.json()
+      } else {
+        alert('ERROR')
+      }
     })
     .then((responseBody) => {
-      MapResponse(responseBody)
-    })
-    .catch(() => {
-      alert('wrong value entered')
+      if (responseBody === undefined) {
+        alert('ERROR')
+      } else {
+        MapResponse(responseBody)
+      }
     })
 }
 
@@ -68,11 +78,19 @@ function MapResponse(response) {
   let weather = response.weather[0].main
 
   let cityName = document.querySelector('.cityName')
-  cityName.innerText = name
+  cityName.innerText = 'City : ' + name
 
   let dateValue = document.querySelector('.date')
-  dateValue.innerText = date()
+  dateValue.innerText = 'Date : ' + date()
 
   let weatherValue = document.querySelector('.weather')
-  weatherValue.innerText = weather
+  weatherValue.innerText = 'Weather : ' + weather
+
+  let highTemp = document.querySelector('.high')
+  let lowTemp = document.querySelector('.low')
+  let high = Math.floor(response.main.temp_max)
+  let low = Math.floor(response.main.temp_min)
+  highTemp.innerText = `High : ${high} °C`
+  lowTemp.innerText = `Low : ${low} °C`
+  document.querySelector('.infoWrapper').style.display = 'flex'
 }
